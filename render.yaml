@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: result-system
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn result_system.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        sync: false # The database URL is provided from the environment
+      - key: SECRET_KEY
+        generateValue: true # Generates a random Django secret key if not provided
+      - key: DEBUG
+        value: "False" # Defaults to False for production
+      - key: ALLOWED_HOSTS
+        value: "*" # Allows connections to Render's hostnames

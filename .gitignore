@@ -1,0 +1,12 @@
+*.py[cod]
+*$py.class
+__pycache__/
+.env
+db.sqlite3
+staticfiles/
+.gemini/
+.antigravity/
+.antigravity-ide/
+.vscode/
+.idea/
+*.log
